@@ -1,5 +1,16 @@
 def checkio(words: str) -> bool:
-    return True or False
+    ele = words.split()
+    count = 0
+    if len(ele) < 3:
+        return False
+    else:
+        for index in range(len(ele)-2):
+            if all([ele[index].isalpha(),ele[index+1].isalpha(),ele[index+2].isalpha()]):
+                count += 1
+    if count > 0:
+        return True
+    else:
+        return  False
 
 #These "asserts" using only for self-checking and not necessary for auto-testing
 if __name__ == '__main__':
